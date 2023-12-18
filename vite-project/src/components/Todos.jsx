@@ -1,9 +1,12 @@
 import { useState } from 'react';
 
 function Todos() {
+
+  // Define state variables
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
+  // Add a new task
   const addTask = () => {
     if (newTask.trim() !== '') {
       setTasks([...tasks, { text: newTask, completed: false }]);
@@ -11,6 +14,8 @@ function Todos() {
     }
   };
 
+
+  // Toggle the completion status of a task
   const toggleTask = (index) => {
     const updatedTasks = [...tasks];
     updatedTasks[index].completed = !updatedTasks[index].completed;
